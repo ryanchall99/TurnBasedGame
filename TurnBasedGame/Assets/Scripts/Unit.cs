@@ -15,17 +15,13 @@ public class Unit : MonoBehaviour
 
     private Vector3 targetPosition;
 
+    private void Awake() {
+        targetPosition = transform.position; // Initialising Target Position to units starting position 
+    }
+
     private void Update() {
 
         HandleMovement();
-
-        if (Input.GetMouseButtonDown(0)) {
-            Move(MouseWorld.GetPosition());
-        }
-    }
-
-    private void Move(Vector3 targetPosition) {
-        this.targetPosition = targetPosition; // Setting Member Variable
     }
 
     private void HandleMovement() {
@@ -41,5 +37,9 @@ public class Unit : MonoBehaviour
         else {
             unitAnimator.SetBool(IS_WALKING, false); // Update Animation (Idle)
         }
+    }
+
+    public void Move(Vector3 targetPosition) {
+        this.targetPosition = targetPosition; // Setting Member Variable
     }
 }
