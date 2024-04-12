@@ -421,63 +421,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &1015803782
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1978419138126036, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_Name
-      value: SM_Buildings_WallDoorDouble_3x3_01P
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847409025970878, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
 --- !u!1001 &1213610031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -680,6 +623,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797750407}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1943701544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943701546}
+  - component: {fileID: 1943701545}
+  m_Layer: 0
+  m_Name: Testing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1943701545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943701544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cc574a73fe3004ebb0dc6c5ad9d84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1943701546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943701544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1952976479 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6721780867853339306, guid: cf198e60ee9ff2d4bb9d489373928e5d,
@@ -926,6 +913,6 @@ SceneRoots:
   - {fileID: 9192908186977727244}
   - {fileID: 1961667346}
   - {fileID: 2046923693}
-  - {fileID: 1015803782}
   - {fileID: 21744716}
   - {fileID: 1213610031}
+  - {fileID: 1943701546}
