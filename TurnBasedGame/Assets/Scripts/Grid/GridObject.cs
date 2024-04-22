@@ -13,4 +13,9 @@ public class GridObject
         this.gridSystem = gridSystem; // System Grid Is Using
         this.gridPosition = gridPosition; // Grid Position Of Object
     }
+
+    public override string ToString()
+    {
+        return gridPosition.ToString();
+    }
 }
