@@ -16,14 +16,14 @@ public class GridSystem
         this.height = height;
         this.cellSize = cellSize;
 
-        gridObjectArray = new GridObject[width, height];
+        gridObjectArray = new GridObject[width, height]; // Defining 2D Array to be size of full grid
 
         for (int x = 0; x < width; x++) 
         {
             for (int z = 0; z < height; z++) 
             {
-                GridPosition gridPosition = new GridPosition(x, z);
-                gridObjectArray[x, z] = new GridObject(this, gridPosition); // Storing 2D Array
+                GridPosition gridPosition = new GridPosition(x, z); // Creating New GridPosition At Current Grid Position
+                gridObjectArray[x, z] = new GridObject(this, gridPosition); // Setting Values At Certain Array Position
             }
         }
     }
