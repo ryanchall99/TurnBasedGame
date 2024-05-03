@@ -26,22 +26,29 @@ public class LevelGrid : MonoBehaviour
         gridSystem.CreateDebugObjects(gridDebugObjectPrefab); // Create Grid Debugging (View Grid)
     }
 
-    public void SetUnitAtGridPosition(GridPosition gridPosition, Unit unit)
+    public void AddUnitAtGridPosition(GridPosition gridPosition, Unit unit)
     {
         GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-        gridObject.SetUnit(unit);
+        gridObject.AddUnit(unit);
     }
 
-    public Unit GetUnitAtGridPosition(GridPosition gridPosition)
+    public List<Unit> GetUnitListAtGridPosition(GridPosition gridPosition)
     {
         GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-        return gridObject.GetUnit();
+        return gridObject.GetUnitList();
     }
 
-    public void ClearUnitAtGridPosition(GridPosition gridPosition)
+    public void RemoveUnitAtGridPosition(GridPosition gridPosition, Unit unit)
     {
         GridObject gridObject = gridSystem.GetGridObject(gridPosition);
-        gridObject.SetUnit(null); // Resets Current Unit Data To Null
+        gridObject.RemoveUnit(unit); // Removes Current Unit Data
+    }
+
+    public void UnitMovedGridPosition(Unit unit, GridPosition fromGridPosition, GridPosition toGridPosition)
+    {
+        RemoveUnitAtGridPosition(fromGridPosition, unit); // Clear Unit From Old Grid Position
+
+        AddUnitAtGridPosition(toGridPosition, unit); // Update Grid Position
     }
 
     public GridPosition GetGridPosition(Vector3 worldPosition) => gridSystem.GetGridPosition(worldPosition);
