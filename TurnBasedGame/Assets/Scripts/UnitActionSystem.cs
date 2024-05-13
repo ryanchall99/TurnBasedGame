@@ -27,7 +27,7 @@ public class UnitActionSystem : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             if (TryHandleUnitSelection()) return; // Selected Unit & Returns Early (Stops Movement On Selection)
             
-            selectedUnit.Move(MouseWorld.GetPosition());
+            selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition()); // Move selected unit
         }
     }
 
