@@ -41,4 +41,10 @@ public class GridObject
     {
         return unitList;
     }
+
+    public bool HasAnyUnit()
+    {
+        // Unit occupying grid space
+        return unitList.Count > 0;
+    }
 }
