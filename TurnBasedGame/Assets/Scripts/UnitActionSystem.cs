@@ -13,6 +13,8 @@ public class UnitActionSystem : MonoBehaviour
     [SerializeField] private Unit selectedUnit;
     [SerializeField] private LayerMask unitLayerMask;
 
+    private bool isBusy;
+
     private void Awake() {
         if (Instance != null) { // Error Checking Singleton
             Debug.LogError("More Than One UnitActionSystem! " + transform + " - " + Instance); // Logs error & where abouts its coming from.
@@ -23,6 +25,10 @@ public class UnitActionSystem : MonoBehaviour
         Instance = this; // Setting Instance (Singleton)
     }
     private void Update() {
+        if (isBusy)
+        {
+            return; // Returns out of update early
+        }
 
         if (Input.GetMouseButtonDown(0)) {
             if (TryHandleUnitSelection()) return; // Selected Unit & Returns Early (Stops Movement On Selection)
@@ -31,14 +37,26 @@ public class UnitActionSystem : MonoBehaviour
 
             if(selectedUnit.GetMoveAction().IsValidActionGridPosition(mouseGridPosition))
             {
-                selectedUnit.GetMoveAction().Move(mouseGridPosition); // Move selected unit
+                SetBusyState(); // Setting Busy To True
+                selectedUnit.GetMoveAction().Move(mouseGridPosition, ClearBusyState); // Move selected unit
             }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            selectedUnit.GetSpinAction().Spin();
+            SetBusyState(); // Setting Busy To True
+            selectedUnit.GetSpinAction().Spin(ClearBusyState);
         }
+    }
+
+    private void SetBusyState()
+    {
+        isBusy = true;
+    }
+
+    private void ClearBusyState()
+    {
+        isBusy = false;
     }
 
     private bool TryHandleUnitSelection() {
